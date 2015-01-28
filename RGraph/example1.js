@@ -28,18 +28,25 @@ function init(){
     //init data
   var json = {
     id: "1",
-    name: "Higgs Boson",
+    name: "",
     children: [{
       id: "2",
       name: "Particle physics",
+      children: [{
+        id: "3",
+        name: "Standard Model",
+        data: {
+          $dim: 8
+        }
+      }, {
+        id: "23",
+        name: "Test Model",
+        data: {
+          $dim: 8
+        }
+      }],
       data: {
         $dim: 9,
-      }
-    }, {
-      id: "3",
-      name: "Standard Model",
-      data: {
-        $dim: 8
       }
     }, {
       id: "4",
@@ -189,7 +196,7 @@ function init(){
       lineWidth:1.5
     },
 
-    levelDistance: 200,
+    levelDistance: 100,
 
     //Add the name of the node in the correponding label
     //and a click handler to move the graph.
@@ -217,7 +224,7 @@ function init(){
 
       } else if(node._depth == 2){
         style.fontSize = "0.7em";
-        style.color = "#494949";
+        style.color = "#ccc";
 
       } else {
         style.display = 'none';
